@@ -1,10 +1,10 @@
-﻿using dashboardAPI.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using dashboardAPI.Models;
 
 namespace dashboardAPI.Data {
-    public class DashboardContext : DbContext {
+    public class DashboardContext : DbContext, IDashboardContext{
         public DashboardContext(DbContextOptions<DashboardContext> options) : base(options) { }
 
-        public DbSet<UserCredentials> _users { get; set; }
+        public DbSet<UserCredentials> Users { get; set; }
     }
 }
